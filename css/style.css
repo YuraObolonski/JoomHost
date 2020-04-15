@@ -1,0 +1,514 @@
+html{
+  box-sizing: border-box; /* означает  что в контейнере  ширина 1170 и паддинг не увеличвает,
+                          а наоборот начинает вписываться в ширину 1170пиксилей отступ 
+                          есть в 15 пикселей а сам текст сдвигается Тоесть наша рабочая
+                          область 1170 но мы ужимаем справа и слева по 15 пикселей наш контейнер*/
+}
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+} /* все остальные теги должны наследовать у своего родителя Html тоесть например див это * 
+  я должен box-sizing пронаследавать  у своего родителя это header а он наследует у body, 
+  а body уже у html.* означает обращение ко всем тегам. Бокс сайзинг я должен пронаследовать 
+  у моего родителя header, а он наследует уже у body как генетика наследует какие то признаки 
+  цвет глаз или форма носа или как древо жизни внуки родители бабушки*/
+
+a{ /* Ссылки */
+  text-decoration: none; /* Убираем у ссылок подчеркование */
+  color: #000; /* Назначаем цвет ссылкам чорный  */
+  display: inline-block;
+}
+
+body{
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  color: #4a6385; 
+}
+
+/*  */
+/* Блок 1. Логотип сайта и меню сайта  */
+/*  */
+
+.container{ /* Контейнер меню */
+  max-width: 1170px;  /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирует содержимое контейнера по центру */ 
+  padding: 0 15px; /* Внутрений отступ контейнера от стенок*/
+}
+
+.header__inner{ /* Обертка логотипа и меню */
+  display: flex; /* Элементы внутри обертки стають строчними */
+  justify-content: space-between; /* Содержимое внутри обертки равномерно распридиляеться по всей строке */
+  align-items: center; /* Выравниваем флекс-элементы по линии центра */
+  height: 87px; /* Назначаем высоту элементов */
+
+}
+.btn__menu{
+  width: 40px;
+  display: none;
+}
+
+.btn__menu div{
+  height: 5px;
+  background-color: #000000;
+  margin-bottom: 5px;
+}
+
+
+.menu__list{ /* Меню */
+  display: flex; /* Элементы внутри списка стають строчними */
+
+}
+
+.menu__list li{ /* Меню и обращаемся элементам меню списка */
+  margin-left: 38px; /* Внешний отступ слева от  края элементав списпа  */
+  list-style-type: none; /* Убираем в элементах маркеры (точки) */
+}
+
+.menu__list a{ /* Меню и обращамся к ссылкам элементам меню списка */
+  font-size: 14px; /* Размер шрифта текста в меню */
+  color: #2f3f54; /* Цвет шрифта */
+  font-weight: 700; /* Устанавливаем Жирность текста жирное  */
+  font-family: 'Open Sans', sans-serif; /* Устанавливаем тип шрифт  */
+}
+/* -- ----------- -- */
+
+/*  */
+/* Блок 2. Главная страница сайта - "Лучший веб хостинг", супер мен и цена */
+/*  */
+
+.top{
+  background-color: #3d85e4;
+  padding-top: 150px;
+  padding-bottom: 180px;
+}
+
+.top__inner{
+  display: flex;
+}
+
+.top-info{
+  max-width: 555px;
+  margin-right: 35px;
+  color: #fff;
+}
+
+.top-info__title{
+  font-size: 48px;
+  line-height: 52px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.top-info__descr{
+  font-size: 19px;
+  line-height: 34px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.top-info__descr span{
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 35px;
+}
+
+.top-info__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  margin-bottom: 50px;
+}
+
+.top-info__list li{
+  font-size: 17px;
+  line-height: 24px;
+  margin-bottom: 3px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 24px;
+}
+
+.top-info__list li::before{
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-image: url(../images/list-icon.png);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top-info__btn{
+  color: #fff;
+  text-transform: uppercase;
+  border: 3px solid #fff;
+  border-radius: 25px;
+  padding: 13px 44px;
+  background-color: #267ae9;
+  margin-bottom: 18px;
+}
+
+.top-images__box{
+  position: relative;
+}
+
+.top-images__circle{
+  width: 230px;
+  height: 230px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  top: -36px;
+  right: -105px;
+}
+
+.top-images__title{
+  text-align: left;
+  width: 140px;
+}
+
+.top-images__price{
+  font-size: 54px;
+  font-weight: 700;
+  padding-top: 15px;
+  padding-bottom: 8px;
+}
+
+.top-images__date{
+  text-align: right;
+  width: 140px;
+}
+
+.price{
+  padding: 150px 0 180px;
+}
+
+.title{
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  color: #2f3f54;
+}
+
+.title span{
+  color: #2c7de8;
+}
+
+.price__descr{
+  text-align: center;
+  max-width: 594px;
+  margin: 35px auto 125px;
+}
+
+.price__descr a{
+  color: #e93f2d;
+}
+
+.price__descr span{
+  color: #5bebd5;
+}
+
+.price__items{
+  display: flex;
+  justify-content: space-between; 
+}
+
+.price-item{
+  width: 360px;
+  box-shadow: 0px 21px 49px 1px rgba(41, 44, 61, 0.15);
+  padding: 0 50px 60px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.price-item__number{
+  width: 270px;
+  height: 465px;
+  border-radius: 136px;
+  color: #fff;
+  background-color: #2c7de8;
+  position: absolute;
+  top: -370px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 33px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.price-item__number span{
+    font-size: 16px;
+    padding-left: 3px;
+    position: absolute;
+    right: 65px;
+    bottom: 35px;
+}
+
+.price-item__images{
+  padding-top: 120px;
+  text-align: center;
+  margin-bottom: 30px;
+  min-height: 251px;
+}
+
+.price-item__title{
+  margin-bottom: 25px; 
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  color: #2c7de8;
+}
+
+.price-item__text{
+  margin-bottom: 50px;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+.price-item__list{
+  margin-bottom: 75px;
+  padding-left: 0;
+}
+
+.price-item__list li{
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  list-style: none;
+  padding-left: 36px;
+  position: relative;
+}
+
+.price-item__list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(../images/price-icon.png);
+  width: 15px;
+  height: 11px;
+}
+
+.price-item__btn{
+  background-color: #267ae9;
+  font-size: 17px;
+  line-height: 21px;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 23px 10px;
+}
+
+.footer{
+  background-color: #304054;
+  padding: 80px 0 125px;
+  color: #718db2;
+}
+
+.footer__inner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col__logo{
+  width: 263px;
+}
+
+.footer__logo{
+  margin-bottom: 30px;
+}
+
+.footer__text{
+  font-size: 13px;
+  line-height: 22px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+.footer__title{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #d0e4ff;
+  margin-bottom: 20px;
+}
+
+.footer-menu{
+  width: 165px;
+  /* margin-right: 132px; */
+}
+
+.footer__list{
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer__list a{
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #718db2;
+}
+
+.footer-form{
+  width: 263px;
+  padding-left: 0;
+}
+
+.footer-form input,
+.footer-form textarea{
+  border: 1px solid rgba(255, 255, 255, .05);
+  background-color: transparent;
+  line-height: 38px;
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  color: #718db2;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.footer-form input::placeholder,
+.footer-form textarea::placeholder{
+  color: #718db2;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.footer-form textarea{
+  padding: 12px;
+  height: 85px;
+  resize: none; 
+}
+
+.footer-form button{
+  margin-top: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  background-color: #2575e7;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.reviews{
+  padding: 120px 0;
+  background-color: #fafafa;
+}
+
+.reviews-slider{
+  margin-top: 160px;
+}
+
+.reviews-slider .slick-list{
+  margin: 0px -50px;
+}
+
+.reviews-slider .slick-slide{
+margin: 0 50px;
+padding-bottom: 70px;
+}
+
+.reviews-box{
+  display: flex;
+  box-shadow: 0px 21px 49px 1px rgba(41, 44, 61, 0.15);
+}
+
+.reviews-slider .slick-dots{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.reviews-slider .slick-dots li{
+  margin: 0 8px;
+}
+
+.reviews-slider .slick-dots li.slick-active button {
+  background-color: #fff;
+  border: 2px solid #2575e7;
+  padding: 0;
+}
+
+.reviews-slider .slick-dots button{
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #2575e7;
+  outline: none ;
+  padding: 0;
+}
+
+.reviews-box__images{
+  background-color: #2575e7;
+  width: 190px;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews-box__images img{
+  border-radius: 50%;
+}
+
+.reviews-box__content{
+  background-color: #fff;
+  width: 330px;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 0px 40px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+}
+
+.reviews-box__text{
+  margin-bottom: 30px;
+}
+
+.reviews-box__author span{
+  color: #2575e7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.sponsor{
+  padding: 115px 0 100px;
+}
+
+
